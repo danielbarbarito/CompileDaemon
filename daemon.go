@@ -75,7 +75,7 @@ import (
 const WorkDelay = 900
 
 // Default pattern to match files which trigger a build
-const FilePattern = `(.+\.go|.+\.c|.+\.html|.+\.tmpl)$`
+const FilePattern = `(.+\.go|.+\.c|.+\.html|.+\.css|.+\.tmpl)$`
 
 type globList []string
 

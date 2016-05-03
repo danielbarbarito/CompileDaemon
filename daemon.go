@@ -9,13 +9,13 @@ Examples
 In its simplest form, the defaults will do. With the current working directory set
 to the source directory you can simply…
 
-    $ CompileDaemon
+		$ CompileDaemon
 
 … and it will recompile your code whenever you save a source file.
 
 If you want it to also run your program each time it builds you might add…
 
-    $ CompileDaemon -command="./MyProgram -my-options"
+		$ CompileDaemon -command="./MyProgram -my-options"
 
 … and it will also keep a copy of your program running. Killing the old one and
 starting a new one each time you build.
@@ -23,11 +23,11 @@ starting a new one each time you build.
 You may find that you need to exclude some directories and files from
 monitoring, such as a .git repository or emacs temporary files…
 
-    $ CompileDaemon -exclude-dir=.git -exclude=".#*"
+		$ CompileDaemon -exclude-dir=.git -exclude=".#*"
 
 If you want to monitor files other than .go and .c files you might…
 
-    $ CompileDaemon -include=Makefile -include="*.less" -include="*.tmpl"
+		$ CompileDaemon -include=Makefile -include="*.less" -include="*.tmpl"
 
 Options
 
@@ -45,7 +45,7 @@ There are command line options.
 	-color            - enable colorized output
 	-log-prefix       - Enable/disable stdout/stderr labelling for the child process
 	-graceful-kill    - On supported platforms, send the child process a SIGTERM to
-	                    allow it to exit gracefully if possible.
+											allow it to exit gracefully if possible.
 	ACTIONS
 	-build=CCC        – Execute CCC to rebuild when a file changes
 	-command=CCC      – Run command CCC after a successful build, stops previous command first
@@ -75,7 +75,7 @@ import (
 const WorkDelay = 900
 
 // Default pattern to match files which trigger a build
-const FilePattern = `(.+\.go|.+\.c)$`
+const FilePattern = `(.+\.go|.+\.c|.+\.html|.+\.tmpl)$`
 
 type globList []string
 
